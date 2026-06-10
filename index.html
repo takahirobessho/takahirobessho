@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Takahiro Bessho Photography | 風景 | 滋賀 | 別所隆弘</title>
+<meta name="description" content="滋賀・京都を中心に風景写真を撮影するプロフォトグラファー別所隆弘のオンラインギャラリー。Online gallery of landscape photographer Takahiro Bessho.">
+<meta property="og:title" content="Takahiro Bessho Photography | 風景 | 滋賀 | 別所隆弘">
+<meta property="og:description" content="滋賀・京都を中心に風景写真を撮影するプロフォトグラファー別所隆弘のオンラインギャラリー">
+<meta property="og:type" content="website">
+<meta property="og:image" content="images/web/rocket.webp">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Shippori+Mincho:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1a1a1a; --ink-soft:#5a5a5a; --line:#e3e0db; --paper:#f7f5f1; --white:#fff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:"Inter","Shippori Mincho",sans-serif;color:var(--ink);background:var(--paper);line-height:1.8;-webkit-font-smoothing:antialiased}
+  img{display:block;width:100%;height:100%;object-fit:cover}
+
+  /* Header */
+  header{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:22px 40px;transition:background .4s,padding .4s,color .4s;color:#fff}
+  header::before{content:"";position:absolute;inset:0 0 -46px 0;z-index:-1;background:linear-gradient(180deg,rgba(0,0,0,.5),rgba(0,0,0,0));pointer-events:none;transition:opacity .4s}
+  header.scrolled{background:rgba(247,245,241,.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);color:var(--ink);border-bottom:1px solid var(--line);padding:15px 40px}
+  header.scrolled::before{opacity:0}
+  .wordmark{font-family:"Cormorant Garamond",serif;font-size:20px;letter-spacing:.22em;font-weight:500;text-transform:uppercase;text-decoration:none;color:inherit;text-shadow:0 1px 10px rgba(0,0,0,.45)}
+  nav{display:flex;gap:34px;align-items:center}
+  nav a{font-size:12px;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;color:inherit;opacity:.9;transition:opacity .2s;text-shadow:0 1px 10px rgba(0,0,0,.45)}
+  nav a:hover{opacity:1}
+  header.scrolled .wordmark,header.scrolled nav a,header.scrolled .menu-toggle{text-shadow:none}
+  .menu-toggle{display:none}
+  /* mobile full-screen menu: body-level overlay, solid, sits below the fixed header bar */
+  .mobile-menu{display:none;position:fixed;inset:0;z-index:40;background:#141414;flex-direction:column;justify-content:center;align-items:center;gap:32px;transform:translateX(100%);transition:transform .35s ease}
+  .mobile-menu.open{transform:none}
+  .mobile-menu a{color:#fff;font-size:18px;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;opacity:.92}
+  .mobile-menu a:hover{opacity:1}
+
+  /* Hero */
+  .hero{position:relative;height:100vh;min-height:600px;width:100%;overflow:hidden;background:#000}
+  .hero .slide{position:absolute;inset:0;opacity:0;transition:opacity 2s ease}
+  .hero .slide.active{opacity:1}
+  .hero .slide img{position:absolute;inset:0;transform:scale(1.04);animation:slowzoom 8s ease-out forwards}
+  @keyframes slowzoom{to{transform:scale(1.12)}}
+  .hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(0,0,0,.30) 0%,rgba(0,0,0,.05) 38%,rgba(0,0,0,.50) 100%)}
+  .hero-content{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:#fff;padding:0 24px}
+  .hero-content h1{font-family:"Cormorant Garamond",serif;font-weight:300;font-size:clamp(46px,8.5vw,116px);line-height:1.02;letter-spacing:.04em}
+  .hero-content .sub{margin-top:18px;font-size:clamp(12px,1.4vw,15px);letter-spacing:.42em;text-transform:uppercase;font-weight:300;opacity:.92}
+  .scroll-cue{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);z-index:2;color:#fff;font-size:10px;letter-spacing:.3em;text-transform:uppercase;opacity:.85;display:flex;flex-direction:column;align-items:center;gap:10px}
+  .scroll-cue span{width:1px;height:46px;background:#fff;animation:cue 2s ease-in-out infinite;transform-origin:top}
+  @keyframes cue{0%,100%{transform:scaleY(.4);opacity:.4}50%{transform:scaleY(1);opacity:1}}
+
+  section{padding:clamp(70px,11vw,150px) 40px}
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity 1s ease,transform 1s ease}
+  .reveal.in{opacity:1;transform:none}
+  .eyebrow{font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:22px}
+
+  /* Statement */
+  .statement{max-width:880px;margin:0 auto;text-align:center}
+  .statement p{font-family:"Shippori Mincho",serif;font-size:clamp(19px,2.4vw,28px);line-height:2.1;font-weight:400;letter-spacing:.02em}
+  .statement .en{margin-top:30px;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(16px,1.8vw,20px);color:var(--ink-soft);line-height:1.9}
+
+  /* Works (masonry) */
+  .works{background:var(--white)}
+  .works-head{display:flex;justify-content:space-between;align-items:flex-end;max-width:1320px;margin:0 auto 50px;flex-wrap:wrap;gap:16px}
+  .works-head h2{font-family:"Cormorant Garamond",serif;font-weight:400;font-size:clamp(30px,4vw,52px);letter-spacing:.02em}
+  .works-head .note{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
+  .masonry{max-width:1320px;margin:0 auto;column-count:3;column-gap:18px}
+  .masonry .tile{position:relative;overflow:hidden;margin:0 0 18px;cursor:pointer;break-inside:avoid;background:#eee}
+  .masonry .tile img{transition:transform 1.2s cubic-bezier(.2,.8,.2,1);width:100%;height:auto}
+  .masonry .tile:hover img{transform:scale(1.05)}
+  .masonry .tile .cap{position:absolute;left:0;right:0;bottom:0;padding:20px;color:#fff;background:linear-gradient(0deg,rgba(0,0,0,.6),transparent);font-size:11px;letter-spacing:.18em;text-transform:uppercase;opacity:0;transform:translateY(8px);transition:.4s}
+  .masonry .tile:hover .cap{opacity:1;transform:none}
+
+  /* About */
+  .about{background:var(--paper);display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,7vw,100px);max-width:1280px;margin:0 auto;align-items:center}
+  .about-img{aspect-ratio:5/4;overflow:hidden}
+  .about-text h2{font-family:"Cormorant Garamond",serif;font-weight:400;font-size:clamp(28px,3.4vw,44px);margin-bottom:26px;letter-spacing:.02em}
+  .about-text p{font-family:"Shippori Mincho",serif;font-size:16px;line-height:2.1;color:#333;margin-bottom:18px}
+  .about-text .link{display:inline-block;margin-top:14px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;color:var(--ink);border-bottom:1px solid var(--ink);padding-bottom:4px}
+
+  /* Footer */
+  footer{background:#141414;color:#e8e6e2;text-align:center;padding:clamp(80px,11vw,140px) 40px 50px}
+  footer .eyebrow{color:#8a8884}
+  footer h2{font-family:"Cormorant Garamond",serif;font-weight:300;font-size:clamp(34px,5vw,68px);margin-bottom:30px;letter-spacing:.03em}
+  footer .mail{font-family:"Shippori Mincho",serif;font-size:clamp(17px,2vw,22px);color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4);padding-bottom:6px;transition:border-color .3s}
+  footer .mail:hover{border-color:#fff}
+  .socials{display:flex;gap:30px;justify-content:center;margin:54px 0 40px;flex-wrap:wrap}
+  .socials a{font-size:11px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:#bbb;transition:color .2s}
+  .socials a:hover{color:#fff}
+  .copy{font-size:11px;letter-spacing:.12em;color:#6f6d69}
+
+  /* Lightbox */
+  .lb{position:fixed;inset:0;z-index:100;background:rgba(10,10,10,.96);display:none;align-items:center;justify-content:center;opacity:0;transition:opacity .3s}
+  .lb.open{display:flex;opacity:1}
+  .lb img{max-width:92vw;max-height:84vh;width:auto;height:auto;object-fit:contain;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+  .lb .lb-cap{position:absolute;bottom:26px;left:0;right:0;text-align:center;color:#ddd;font-size:12px;letter-spacing:.2em;text-transform:uppercase}
+  .lb button{position:absolute;background:none;border:none;color:#fff;cursor:pointer;font-size:30px;opacity:.7;transition:opacity .2s;padding:18px}
+  .lb button:hover{opacity:1}
+  .lb .close{top:14px;right:20px;font-size:26px}
+  .lb .prev{left:10px;top:50%;transform:translateY(-50%)}
+  .lb .next{right:10px;top:50%;transform:translateY(-50%)}
+
+  @media(max-width:1024px){.masonry{column-count:2}}
+  @media(max-width:860px){
+    header{padding:16px 22px}
+    nav{display:none}
+    .mobile-menu{display:flex}
+    .menu-toggle{display:block;background:none;border:none;color:inherit;font-size:12px;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;z-index:60;text-shadow:0 1px 10px rgba(0,0,0,.45)}
+    section{padding:80px 22px}
+    .about{grid-template-columns:1fr;gap:36px}
+  }
+  @media(max-width:560px){.masonry{column-count:1}}
+  /* keep the statement lines on a single line each on phones */
+  @media(max-width:600px){
+    .statement p{font-size:clamp(12px,3.6vw,17px);letter-spacing:0;line-height:2.05}
+    .statement .en{font-size:clamp(12px,3.2vw,16px)}
+    .statement .eyebrow{font-size:clamp(8px,2.4vw,11px);letter-spacing:.12em}
+  }
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="#top" class="wordmark">Takahiro Bessho</a>
+  <button class="menu-toggle" id="mt">Menu</button>
+  <nav id="nav">
+    <a href="#works">Gallery</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <a href="https://www.instagram.com/takahiro_bessho/" target="_blank" rel="noopener">Instagram</a>
+  </nav>
+</header>
+
+<!-- MOBILE MENU (body-level overlay; reliable on iOS) -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#works">Gallery</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+  <a href="https://www.instagram.com/takahiro_bessho/" target="_blank" rel="noopener">Instagram</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="top" style="padding:0">
+  <div class="slide active"><img src="images/web/sakura-canal.webp" alt=""></div>
+  <div class="slide"><img src="images/web/fireworks-city.webp" alt=""></div>
+  <div class="hero-content">
+    <h1>Around the Lake</h1>
+    <div class="sub">Takahiro Bessho Photography</div>
+  </div>
+  <div class="scroll-cue">Scroll<span></span></div>
+</section>
+
+<!-- STATEMENT -->
+<section>
+  <div class="statement reveal">
+    <div class="eyebrow">Landscape Photography &mdash; Shiga / Kyoto, Japan</div>
+    <p>琵琶湖のほとりで、光と水と空が交わる一瞬を待つ。<br>同じ景色は二度と訪れない。だからこそ、撮る。</p>
+    <p class="en">Chasing the fleeting light around the largest lake in Japan &mdash; where water, sky, and season meet for a single moment.</p>
+  </div>
+</section>
+
+<!-- WORKS -->
+<section class="works" id="works">
+  <div class="works-head reveal">
+    <h2>Selected Works</h2>
+    <div class="note">Click to enlarge</div>
+  </div>
+  <div class="masonry" id="masonry">
+    <div class="tile" data-cap="Festival of Light"><img loading="lazy" decoding="async" src="images/web/fireworks-city.webp" alt="Fireworks over the city and lake"><div class="cap">Festival of Light</div></div>
+    <div class="tile" data-cap="Spring Reflection"><img loading="lazy" decoding="async" src="images/web/sakura-castle.webp" alt="Cherry blossoms reflected in still water"><div class="cap">Spring Reflection</div></div>
+    <div class="tile" data-cap="Autumn Retreat"><img loading="lazy" decoding="async" src="images/web/autumn-hut.webp" alt="Autumn maples around a small hut"><div class="cap">Autumn Retreat</div></div>
+    <div class="tile" data-cap="Comet &amp; Milky Way"><img loading="lazy" decoding="async" src="images/web/milkyway.webp" alt="Comet and Milky Way over the sea"><div class="cap">Comet &amp; Milky Way</div></div>
+    <div class="tile" data-cap="Field of Gold"><img loading="lazy" decoding="async" src="images/web/nanohana.webp" alt="Field of rape blossoms below a mountain"><div class="cap">Field of Gold</div></div>
+    <div class="tile" data-cap="Crimson Path"><img loading="lazy" decoding="async" src="images/web/maple-temple.webp" alt="Red maple leaves over a temple path"><div class="cap">Crimson Path</div></div>
+    <div class="tile" data-cap="Island Dawn"><img loading="lazy" decoding="async" src="images/web/island-dawn.webp" alt="Sunrise over the sea with a small island"><div class="cap">Island Dawn</div></div>
+    <div class="tile" data-cap="Hanabi"><img loading="lazy" decoding="async" src="images/web/fireworks-vertical.webp" alt="Fireworks reflected on water"><div class="cap">Hanabi</div></div>
+    <div class="tile" data-cap="Silent Winter"><img loading="lazy" decoding="async" src="images/web/metasequoia-snow.webp" alt="Snow-covered metasequoia trees"><div class="cap">Silent Winter</div></div>
+    <div class="tile" data-cap="Red Spider Lilies"><img loading="lazy" decoding="async" src="images/web/higanbana.webp" alt="Red spider lilies in a green forest"><div class="cap">Red Spider Lilies</div></div>
+    <div class="tile" data-cap="Still Water"><img loading="lazy" decoding="async" src="images/web/lake-night.webp" alt="Long exposure of the lake at night"><div class="cap">Still Water</div></div>
+    <div class="tile" data-cap="Weeping Cherry"><img loading="lazy" decoding="async" src="images/web/weeping-sakura.webp" alt="A lone weeping cherry tree in bloom"><div class="cap">Weeping Cherry</div></div>
+    <div class="tile" data-cap="Mountain Pass"><img loading="lazy" decoding="async" src="images/web/aerial-road.webp" alt="Aerial winding mountain road in autumn"><div class="cap">Mountain Pass</div></div>
+    <div class="tile" data-cap="Sea of Clouds"><img loading="lazy" decoding="async" src="images/web/seaofclouds.webp" alt="Sea of clouds at sunrise"><div class="cap">Sea of Clouds</div></div>
+    <div class="tile" data-cap="Crimson Gate"><img loading="lazy" decoding="async" src="images/web/torii-autumn.webp" alt="Autumn leaves over a red torii path"><div class="cap">Crimson Gate</div></div>
+    <div class="tile" data-cap="Twilight Comet"><img loading="lazy" decoding="async" src="images/web/comet-twilight.webp" alt="A comet over the sea at twilight"><div class="cap">Twilight Comet</div></div>
+    <div class="tile" data-cap="Summer Sky"><img loading="lazy" decoding="async" src="images/web/summer-lake.webp" alt="Cumulus clouds over a summer lake"><div class="cap">Summer Sky</div></div>
+    <div class="tile" data-cap="Autumn Pagoda"><img loading="lazy" decoding="async" src="images/web/pagoda-autumn.webp" alt="A pagoda among autumn foliage"><div class="cap">Autumn Pagoda</div></div>
+    <div class="tile" data-cap="Night Approach"><img loading="lazy" decoding="async" src="images/web/airplane.webp" alt="Airplane on the runway at night"><div class="cap">Night Approach</div></div>
+    <div class="tile" data-cap="Sakura, Mirrored"><img loading="lazy" decoding="async" src="images/web/sakura-reflection.webp" alt="Cherry blossoms mirrored on dark water"><div class="cap">Sakura, Mirrored</div></div>
+    <div class="tile" data-cap="Quiet Mountain"><img loading="lazy" decoding="async" src="images/web/mountain-twilight.webp" alt="A mountain silhouette over calm water"><div class="cap">Quiet Mountain</div></div>
+    <div class="tile" data-cap="Hanabi, Lakeside"><img loading="lazy" decoding="async" src="images/web/fireworks-lake.webp" alt="Fireworks over a lakeside city at night"><div class="cap">Hanabi, Lakeside</div></div>
+    <div class="tile" data-cap="Borrowed Scenery"><img loading="lazy" decoding="async" src="images/web/green-room.webp" alt="Fresh green garden seen from a tatami room"><div class="cap">Borrowed Scenery</div></div>
+    <div class="tile" data-cap="Liftoff"><img loading="lazy" decoding="async" src="images/web/rocket.webp" alt="Rocket launch arc over the sea"><div class="cap">Liftoff</div></div>
+    <div class="tile" data-cap="Metasequoia, Autumn"><img loading="lazy" decoding="async" src="images/web/metasequoia-autumn.webp" alt="Metasequoia avenue in autumn"><div class="cap">Metasequoia, Autumn</div></div>
+    <div class="tile" data-cap="Burning Sky"><img loading="lazy" decoding="async" src="images/web/sunset-reflection.webp" alt="Dramatic sunset clouds reflected on water"><div class="cap">Burning Sky</div></div>
+    <div class="tile" data-cap="First Snow"><img loading="lazy" decoding="async" src="images/web/aerial-snow.webp" alt="Aerial view of a snow-covered forest"><div class="cap">First Snow</div></div>
+    <div class="tile" data-cap="First Light"><img loading="lazy" decoding="async" src="images/web/lake-sunrise.webp" alt="Sunrise over a calm lake with mooring poles"><div class="cap">First Light</div></div>
+    <div class="tile" data-cap="Light Blossom"><img loading="lazy" decoding="async" src="images/web/fireworks-white.webp" alt="A large white firework blooming in the night"><div class="cap">Light Blossom</div></div>
+    <div class="tile" data-cap="Sakura Tunnel"><img loading="lazy" decoding="async" src="images/web/sakura-canal.webp" alt="Cherry blossoms over a canal"><div class="cap">Sakura Tunnel</div></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-img reveal"><img src="images/web/lake-night.webp" alt=""></div>
+  <div class="about-text reveal">
+    <div class="eyebrow">About</div>
+    <h2>別所 隆弘</h2>
+    <p>滋賀・京都を拠点に活動する風景写真家。琵琶湖を中心とした「Around The Lake」をライフワークとし、移ろう光と季節の一瞬を追い続けている。</p>
+    <p>写真家としての活動のほか、文章を通じて「フレームの外側にあるもの」を語ることにも力を注いでいる。</p>
+    <a href="https://note.com/takahirobessho" target="_blank" rel="noopener" class="link">Read More on note</a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<footer id="contact">
+  <div class="eyebrow">Get in Touch</div>
+  <h2>Let's create<br>something together.</h2>
+  <a href="mailto:tbessho@gmail.com" class="mail">tbessho@gmail.com</a>
+  <div class="socials">
+    <a href="https://www.instagram.com/takahiro_bessho/" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://twitter.com/TakahiroBessho" target="_blank" rel="noopener">X / Twitter</a>
+    <a href="https://www.youtube.com/TakahiroBessho" target="_blank" rel="noopener">YouTube</a>
+    <a href="https://note.com/takahirobessho" target="_blank" rel="noopener">note</a>
+  </div>
+  <div class="copy">© 2012–2026 Takahiro Bessho Photography 別所隆弘. All rights reserved.</div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lb">
+  <button class="close" id="lbClose" aria-label="Close">&times;</button>
+  <button class="prev" id="lbPrev" aria-label="Previous">&#10094;</button>
+  <img id="lbImg" src="" alt="">
+  <button class="next" id="lbNext" aria-label="Next">&#10095;</button>
+  <div class="lb-cap" id="lbCap"></div>
+</div>
+
+<script>
+  // header state
+  const hdr=document.getElementById('hdr');
+  addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>innerHeight*0.7));
+  // mobile menu
+  const mt=document.getElementById('mt'),mm=document.getElementById('mobileMenu');
+  mt.onclick=()=>{const o=mm.classList.toggle('open');mt.textContent=o?'Close':'Menu';document.body.style.overflow=o?'hidden':''};
+  mm.querySelectorAll('a').forEach(a=>a.onclick=()=>{mm.classList.remove('open');mt.textContent='Menu';document.body.style.overflow=''});
+  // reveal on scroll
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  // hero: keep first 2 slides fixed, then add 8 random images from the gallery (re-shuffled each visit)
+  (function(){
+    const heroEl=document.querySelector('.hero');
+    const fixed=['sakura-canal','fireworks-city'];
+    const all=['fireworks-city','metasequoia-autumn','milkyway','sakura-canal','airplane','aerial-road','fireworks-vertical','seaofclouds','metasequoia-snow','maple-temple','rocket','lake-night','aerial-snow','sakura-reflection','fireworks-white','higanbana','autumn-hut','fireworks-lake','sakura-castle','comet-twilight','summer-lake','nanohana','weeping-sakura','pagoda-autumn','torii-autumn','green-room','island-dawn','sunset-reflection','mountain-twilight','lake-sunrise'];
+    const pool=all.filter(n=>!fixed.includes(n));
+    for(let i=pool.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[pool[i],pool[j]]=[pool[j],pool[i]];}
+    const ref=heroEl.querySelector('.hero-content');
+    // inject slides WITHOUT loading them yet (data-src). They load just-in-time as the carousel reaches them.
+    pool.slice(0,8).forEach(n=>{const d=document.createElement('div');d.className='slide';const im=document.createElement('img');im.alt='';im.dataset.src='images/web/'+n+'.webp';d.appendChild(im);heroEl.insertBefore(d,ref);});
+  })();
+  // hero crossfade with just-in-time image loading (only downloads slides as they're shown)
+  const slides=[...document.querySelectorAll('.hero .slide')];let hi=0;
+  const heroLoad=i=>{const im=slides[i].querySelector('img');if(im&&im.dataset.src){im.src=im.dataset.src;im.removeAttribute('data-src');}};
+  heroLoad(1%slides.length); // preload the next one
+  setInterval(()=>{
+    slides[hi].classList.remove('active');hi=(hi+1)%slides.length;heroLoad(hi);
+    slides[hi].classList.add('active');heroLoad((hi+1)%slides.length);
+    const im=slides[hi].querySelector('img');im.style.animation='none';im.offsetHeight;im.style.animation='';
+  },6000);
+  // lightbox
+  const tiles=[...document.querySelectorAll('.masonry .tile')];
+  const lb=document.getElementById('lb'),lbImg=document.getElementById('lbImg'),lbCap=document.getElementById('lbCap');
+  let idx=0;
+  function show(i){idx=(i+tiles.length)%tiles.length;const t=tiles[idx];lbImg.src=t.querySelector('img').src;lbCap.textContent=t.dataset.cap;}
+  function open(i){show(i);lb.classList.add('open');document.body.style.overflow='hidden';}
+  function close(){lb.classList.remove('open');document.body.style.overflow='';}
+  tiles.forEach((t,i)=>t.onclick=()=>open(i));
+  document.getElementById('lbClose').onclick=close;
+  document.getElementById('lbNext').onclick=e=>{e.stopPropagation();show(idx+1)};
+  document.getElementById('lbPrev').onclick=e=>{e.stopPropagation();show(idx-1)};
+  lb.onclick=e=>{if(e.target===lb)close()};
+  addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')close();if(e.key==='ArrowRight')show(idx+1);if(e.key==='ArrowLeft')show(idx-1)});
+</script>
+</body>
+</html>
