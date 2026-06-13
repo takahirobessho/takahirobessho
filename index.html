@@ -276,7 +276,7 @@
         <h2>別所 隆弘</h2>
         <div class="romaji">Takahiro Bessho &mdash; Photographer / Literary Scholar</div>
         <p>滋賀・京都を拠点に活動する風景写真家。琵琶湖を中心とした「Around The Lake」をライフワークとし、移ろう光と季節の一瞬を追い続けている。ナショナル ジオグラフィック「Nature Photographer of the Year 2017」空撮部門で世界2位を受賞。</p>
-        <p>19世紀アメリカ文学の研究者という、もうひとつの顔を持つ。写真と文学、ふたつのレンズを行き来しながら、「フレームの外側にあるもの」を言葉でも語り続けている。</p>
+        <p>19世紀アメリカ文学の研究者という、もうひとつの顔を持つ。写真と文学、ふたつのメディアを行き来しながら、「その間」にある未踏の空間を探り続けている。</p>
         <a href="https://note.com/takahirobessho" target="_blank" rel="noopener" class="about-link">Read More on note</a>
       </div>
     </div>
@@ -376,6 +376,7 @@
 
   // ——— photo data (file, EN title, JP caption, season EN/JP, aspect ratio w/h) ———
   const PHOTOS=[
+    {f:'smoke-dragon',t:'Smoke, Shadow or Scintillation: Or, the Smoke-Eating Dragon',jp:'煙か闇か爆ぜ物',se:'Summer',sj:'夏',ar:1.5},
     {f:'sakura-canal',t:'Sakura Tunnel',jp:'花の運河、春の宵',se:'Spring',sj:'春',ar:1500/1031},
     {f:'fireworks-city',t:'Festival of Light',jp:'湖上の祝祭',se:'Summer',sj:'夏',ar:1.5},
     {f:'sakura-castle',t:'Spring Reflection',jp:'水鏡の桜と城',se:'Spring',sj:'春',ar:1.5},
@@ -405,8 +406,7 @@
     {f:'sunset-reflection',t:'Burning Sky',jp:'燃える空の水鏡',se:'Twilight',sj:'黄昏',ar:1.5},
     {f:'aerial-snow',t:'From Above',jp:'初雪の森、空から',se:'Winter',sj:'冬',ar:1500/844},
     {f:'lake-sunrise',t:'Last Light',jp:'湖の夕焼け',se:'Dusk',sj:'夕',ar:1.5},
-    {f:'fireworks-white',t:'Light Blossom',jp:'白い光の花',se:'Summer',sj:'夏',ar:1.5},
-    {f:'smoke-dragon',t:'Smoke, Shadow or Scintillation: Or, the Smoke-Eating Dragon',jp:'煙か闇か爆ぜ物',se:'Summer',sj:'夏',ar:1.5}
+    {f:'fireworks-white',t:'Light Blossom',jp:'白い光の花',se:'Summer',sj:'夏',ar:1.5}
   ];
   const src=p=>'images/web/'+p.f+'.webp';
   const shuffle=a=>{for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a};
