@@ -161,7 +161,10 @@
   footer h2{font-family:var(--serif);font-weight:300;font-size:clamp(36px,5.4vw,76px);margin-bottom:34px;letter-spacing:.03em;line-height:1.15}
   footer .mail{font-family:var(--mincho);font-size:clamp(16px,2vw,21px);color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.35);padding-bottom:6px;transition:border-color .3s;letter-spacing:.05em}
   footer .mail:hover{border-color:#fff}
-  .socials{display:flex;gap:34px;justify-content:center;margin:58px 0 44px;flex-wrap:wrap}
+  .social-groups{margin:54px 0 44px;display:flex;flex-direction:column;gap:24px;align-items:center}
+  .social-group{display:flex;flex-direction:column;align-items:center;gap:13px}
+  .sg-label{font-size:9px;letter-spacing:.42em;text-transform:uppercase;color:#5d5a55}
+  .socials{display:flex;gap:30px;justify-content:center;flex-wrap:wrap}
   .socials a{font-size:10px;letter-spacing:.26em;text-transform:uppercase;text-decoration:none;color:var(--ink-soft);transition:color .25s}
   .socials a:hover{color:#fff}
   .copy{font-size:10px;letter-spacing:.14em;color:#5d5a55}
@@ -336,11 +339,23 @@
   <div class="eyebrow">Get in Touch</div>
   <h2>Let's create<br>something together.</h2>
   <a href="mailto:tbessho@gmail.com" class="mail">tbessho@gmail.com</a>
-  <div class="socials">
-    <a href="https://www.instagram.com/takahiro_bessho/" target="_blank" rel="noopener">Instagram</a>
-    <a href="https://twitter.com/TakahiroBessho" target="_blank" rel="noopener">X / Twitter</a>
-    <a href="https://www.youtube.com/TakahiroBessho" target="_blank" rel="noopener">YouTube</a>
-    <a href="https://note.com/takahirobessho" target="_blank" rel="noopener">note</a>
+  <div class="social-groups">
+    <div class="social-group">
+      <span class="sg-label">Social</span>
+      <div class="socials">
+        <a href="https://www.instagram.com/takahiro_bessho/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://twitter.com/TakahiroBessho" target="_blank" rel="noopener">X / Twitter</a>
+        <a href="https://www.threads.com/@takahiro_bessho" target="_blank" rel="noopener">Threads</a>
+        <a href="https://www.youtube.com/TakahiroBessho" target="_blank" rel="noopener">YouTube</a>
+      </div>
+    </div>
+    <div class="social-group">
+      <span class="sg-label">Writing</span>
+      <div class="socials">
+        <a href="https://note.com/takahirobessho" target="_blank" rel="noopener">note</a>
+        <a href="https://takahirobessho.theletter.jp" target="_blank" rel="noopener">The Letter</a>
+      </div>
+    </div>
   </div>
   <div class="copy">© 2012–2026 Takahiro Bessho Photography 別所隆弘. All rights reserved.</div>
 </footer>
